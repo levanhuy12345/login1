@@ -18,12 +18,12 @@ import java.util.Scanner;
  */
 public class Validate {
 
-    private final static Scanner in = new Scanner(System.in);
-    private final static String VALID_USERNAME = "^\\S{5}\\S*$";
-    private final static String VALID_PASSWORD = "^\\S{6}\\S*$";
+    private final  Scanner in = new Scanner(System.in);
+    private final  String VALID_USERNAME = "^\\S{5}\\S*$";
+    private final String VALID_PASSWORD = "^\\S{6}\\S*$";
 
     //check user input number limit
-    public static int checkInputIntLimit(int min, int max) {
+    public int checkInputIntLimit(int min, int max) {
         //loop until user input correct
         while (true) {
             try {
@@ -41,7 +41,7 @@ public class Validate {
     }
 
     //check user input string
-    public static String checkInputString() {
+    public String checkInputString() {
         //loop until user input correct
         while (true) {
             String result = in.nextLine().trim();
@@ -55,7 +55,7 @@ public class Validate {
     }
 
     //check user input yes/ no
-    public static boolean checkInputYN() {
+    public boolean checkInputYN() {
         //loop until user input correct
         while (true) {
             String result = checkInputString();
@@ -73,7 +73,7 @@ public class Validate {
     }
 
     //check file data exist or not
-    public static boolean checkFileExist() {
+    public boolean checkFileExist() {
         File file = new File("D:/user.dat");
         if (!file.exists()) {
             try {
@@ -89,7 +89,7 @@ public class Validate {
     }
 
     //allow user input username
-    public static String checkInputUsername() {
+    public String checkInputUsername() {
         System.out.print("Enter username: ");
         //loop until user input correct
         while (true) {
@@ -103,7 +103,7 @@ public class Validate {
     }
 
     //allow user input password
-    public static String checkInputPassword() {
+    public String checkInputPassword() {
         System.out.print("Enter password: ");
         //loop until user input correct
         while (true) {
@@ -117,7 +117,7 @@ public class Validate {
     }
 
     //check username exist
-    public static boolean checkUsernameExist(String username) {
+    public boolean checkUsernameExist(String username) {
         File file = new File("D:/user.dat");
         try {
             FileReader fileReader = new FileReader(file);

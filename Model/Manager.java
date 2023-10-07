@@ -17,16 +17,16 @@ import java.io.IOException;
  * @author PC
  */
 public class Manager {
-
-    public static void createNewAccount() {
+Validate vd = new Validate();
+    public  void createNewAccount() {
         //check file data exist or not
-        if (!Validate.checkFileExist()) {
+        if (!vd.checkFileExist()) {
             return;
         }
-        String username = Validate.checkInputUsername();
-        String password = Validate.checkInputPassword();
+        String username = vd.checkInputUsername();
+        String password = vd.checkInputPassword();
         //check username exist or not
-        if (!Validate.checkUsernameExist(username)) {
+        if (!vd.checkUsernameExist(username)) {
             System.err.println("Username exist.");
             return;
         }
@@ -34,15 +34,15 @@ public class Manager {
     }
 
     //login system
-    public static void loginSystem() {
+    public void loginSystem() {
         //check file data exist or not
-        if (!Validate.checkFileExist()) {
+        if (!vd.checkFileExist()) {
             return;
         }
-        String username = Validate.checkInputUsername();
-        String password = Validate.checkInputPassword();
+        String username = vd.checkInputUsername();
+        String password = vd.checkInputPassword();
         //check username exist or not
-        if (!Validate.checkUsernameExist(username)) {
+        if (!vd.checkUsernameExist(username)) {
             if (!password.equalsIgnoreCase(passwordByUsername(username))) {
                 System.err.println("Password incorrect.");
             }
@@ -51,7 +51,7 @@ public class Manager {
     }
 
     //write new account to data
-    public static void addAccountData(String username, String password) {
+    public void addAccountData(String username, String password) {
         File file = new File("D:/NewUser.dat");
         try {
             FileWriter fileWriter = new FileWriter(file, true);
@@ -64,7 +64,7 @@ public class Manager {
     }
 
     //get password by username
-    public static String passwordByUsername(String username) {
+    public  String passwordByUsername(String username) {
         File file = new File("NewUser.dat");
         try {
             FileReader fileReader = new FileReader(file);

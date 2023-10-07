@@ -24,10 +24,10 @@ public class ManagerMenu extends Menu<String> {
         Manager manager = new Manager();
         switch (n) {
             case 1:
-                    Manager.createNewAccount();
+                    manager.createNewAccount();
                     break;
                 case 2:
-                    Manager.loginSystem();
+                    manager.loginSystem();
                     break;
                 case 3:
                     return;
